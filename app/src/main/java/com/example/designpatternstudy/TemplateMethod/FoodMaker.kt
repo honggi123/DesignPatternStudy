@@ -8,6 +8,7 @@ enum class DelieverDistance {
 abstract class FoodMaker {
 
     fun prepareFood(distance: DelieverDistance) {
+        noticePrepare()
         prepareCondiments()
         cutCondiments()
         cook()
@@ -27,6 +28,10 @@ abstract class FoodMaker {
 
     }
 
+    private fun noticePrepare() {
+        System.out.println("음식을 준비하겠습니다.")
+    }
+
     protected abstract fun prepareCondiments()
     protected abstract fun cook()
     protected abstract fun cutCondiments()
@@ -39,6 +44,7 @@ abstract class FoodMaker {
     private fun boxingLongDistance() {
         System.out.println("온열 박스로 포장합니다.")
     }
+
 
     protected open fun IsChicken() = false
 
