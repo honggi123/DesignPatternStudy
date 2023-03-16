@@ -7,6 +7,7 @@ import com.example.designpatternstudy.Adapter.FormatAdapter
 import com.example.designpatternstudy.Adapter.Mp3Player
 import com.example.designpatternstudy.Command.*
 import com.example.designpatternstudy.Decorator.*
+import com.example.designpatternstudy.Iterator.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 //        var mycoffee2 =seoulCoffeeFactory.order("아메리카노")
 
 //        Command
-
+//
 //        var mp3 = Mp3()
 //        mp3.updateSound(DrumCommand(SoundDrum()))
 //        mp3.updateSound(PianoCommand(SoundPiano()))
@@ -55,12 +56,27 @@ class MainActivity : AppCompatActivity() {
 //        mp3.playSound()
 //        mp3.nextSoundPlay()
 //        mp3.prevSoundPlay()
-
+//
 //        Adapter
-//         var mp3Player = Mp3Player()
-//         var mp4Player = FormatAdapter(mp3Player)
-//         mp4Player.playSong()
-//         mp4Player.displayVideo()
+//
+//        var mp3Player = Mp3Player()
+//        var mp4Player = FormatAdapter(mp3Player)
+//        mp4Player.playSong()
+//        mp4Player.displayVideo()
+
+//        Iterator
+//        예시 데이터
+        var bookShelf = BookShelf()
+        bookShelf.addBook(Book("책1", 123))
+        bookShelf.addBook(Book("책2", 123))
+        bookShelf.addBook(Book("책3", 123))
+
+        var garage = Garage()
+        garage.addCar(Car("차1", 123))
+        garage.addCar(Car("차2", 123))
+
+        var waitress = Waitress(bookShelf,garage)
+        waitress.printProduct()
 
     }
 }
