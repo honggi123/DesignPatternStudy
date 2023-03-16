@@ -1,5 +1,5 @@
 package com.example.designpatternstudy.Iterator
 
-interface Aggregate {
+interface Home {
     fun createIterator(): Iterator<Product>
 }

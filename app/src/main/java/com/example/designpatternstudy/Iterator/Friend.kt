@@ -1,6 +1,6 @@
 package com.example.designpatternstudy.Iterator
 
-class Waitress(private val bookShelf: Aggregate, private val garage: Aggregate) {
+class Friend(private val bookShelf: Home, private val garage: Home) {
 
     fun printProduct() {
         var bookIterator = bookShelf.createIterator()

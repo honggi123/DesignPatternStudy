@@ -2,11 +2,6 @@ package com.example.designpatternstudy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.designpatternstudy.Adapter.FormatAdapter
-import com.example.designpatternstudy.Adapter.Mp3Player
-import com.example.designpatternstudy.Command.*
-import com.example.designpatternstudy.Decorator.*
 import com.example.designpatternstudy.Iterator.*
 
 
@@ -75,8 +70,8 @@ class MainActivity : AppCompatActivity() {
         garage.addCar(Car("차1", 123))
         garage.addCar(Car("차2", 123))
 
-        var waitress = Waitress(bookShelf,garage)
-        waitress.printProduct()
+        var myFriend = Friend(bookShelf,garage)
+        myFriend.printProduct()
 
     }
 }

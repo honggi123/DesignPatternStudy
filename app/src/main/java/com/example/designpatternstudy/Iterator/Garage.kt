@@ -1,10 +1,10 @@
 package com.example.designpatternstudy.Iterator
 
-class Garage : Aggregate {
+class Garage : Home {
 
     private var list = mutableListOf<Car>()
 
-    fun addCar(car: Car){
+    fun addCar(car: Car) {
         list.add(car)
     }
 

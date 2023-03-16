@@ -1,10 +1,10 @@
 package com.example.designpatternstudy.Iterator
 
-class BookShelf : Aggregate {
+class BookShelf : Home {
 
     private var list = mutableListOf<Book>()
 
-    fun addBook(book: Book){
+    fun addBook(book: Book) {
         list.add(book)
     }
 
