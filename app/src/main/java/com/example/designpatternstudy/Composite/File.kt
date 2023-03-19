@@ -1,18 +1,15 @@
 package com.example.designpatternstudy.Composite
 
-import java.lang.UnsupportedOperationException
+import android.util.Log
 
 class File : FolderComponent() {
 
-    private var content: String = ""
-        set(value) {
-            this.content = value
-        }
+    private var data: Int = 5
 
-    override fun print() = System.out.println(content)
-
-    override fun addComponent(folderComponent: FolderComponent) {
-        throw UnsupportedOperationException()
+    override fun printAll() {
+        Log.d("File", data.toString())
     }
+
+    override fun sum(): Int = data
 
 }

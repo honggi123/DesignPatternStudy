@@ -6,6 +6,9 @@ import android.util.Log
 import com.example.designpatternstudy.Adapter.FormatAdapter
 import com.example.designpatternstudy.Adapter.Mp3Player
 import com.example.designpatternstudy.Command.*
+import com.example.designpatternstudy.Composite.File
+import com.example.designpatternstudy.Composite.Folder
+import com.example.designpatternstudy.Composite.FolderComponent
 import com.example.designpatternstudy.Decorator.*
 
 
@@ -62,5 +65,20 @@ class MainActivity : AppCompatActivity() {
 //         mp4Player.playSong()
 //         mp4Player.displayVideo()
 
+//        Composite
+        var subFolder : FolderComponent = Folder()
+        subFolder.addComponent(File())
+        subFolder.addComponent(File())
+        subFolder.addComponent(File())
+        subFolder.addComponent(File())
+
+        var superFolder: FolderComponent = Folder()
+        superFolder.addComponent(subFolder)
+        superFolder.addComponent(File())
+        superFolder.addComponent(File())
+        superFolder.addComponent(File())
+
+        superFolder.printSum()
+        superFolder.printAll()
     }
 }

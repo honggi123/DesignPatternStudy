@@ -1,11 +1,19 @@
 package com.example.designpatternstudy.Composite
 
-import java.lang.UnsupportedOperationException
+import kotlin.UnsupportedOperationException
 
 abstract class FolderComponent {
 
-    abstract fun print()
+    abstract fun printAll()
 
-    abstract fun addComponent(folderComponent: FolderComponent)
+    open fun printSum() {
+        throw UnsupportedOperationException()
+    }
+
+    open fun addComponent(folderComponent: FolderComponent) {
+        throw UnsupportedOperationException()
+    }
+
+    abstract fun sum(): Int
 
 }
