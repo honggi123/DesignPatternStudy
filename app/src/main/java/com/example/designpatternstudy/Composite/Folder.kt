@@ -5,7 +5,7 @@ import android.util.Log
 class Folder() : FolderComponent() {
 
     private val list: MutableList<FolderComponent> = mutableListOf()
-    private var data: Int = 0
+    private var data: Int = 5
 
     override fun printAll() {
         for (comp: FolderComponent in list)
@@ -13,8 +13,7 @@ class Folder() : FolderComponent() {
     }
 
     override fun printSum() {
-        sum()
-        Log.d("Folder", "Sum : " + data.toString())
+        Log.d("Folder", "Sum : " + sum().toString())
     }
 
     override fun addComponent(folderComponent: FolderComponent) {
@@ -22,9 +21,11 @@ class Folder() : FolderComponent() {
     }
 
     override fun sum(): Int {
-        for (comp: FolderComponent in list)
-            data += comp.sum()
-        return data
+        var tempData : Int = data
+        for (comp: FolderComponent in list){
+            tempData += comp.sum()
+        }
+        return tempData
     }
 
 }

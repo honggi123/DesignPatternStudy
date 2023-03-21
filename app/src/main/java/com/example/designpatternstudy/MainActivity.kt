@@ -79,6 +79,8 @@ class MainActivity : AppCompatActivity() {
         superFolder.addComponent(File())
 
         superFolder.printSum()
+        superFolder.printSum()
+
         superFolder.printAll()
     }
 }
