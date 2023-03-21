@@ -2,30 +2,32 @@ package com.example.designpatternstudy.Composite
 
 import android.util.Log
 
-class Folder() : FolderComponent() {
+class Folder(val folderName: String) : FolderComponent(folderName) {
 
     private val list: MutableList<FolderComponent> = mutableListOf()
-    private var data: Int = 5
 
     override fun printAll() {
-        for (comp: FolderComponent in list)
+        for (comp: FolderComponent in list) {
+            var folderPath = super.absolutelyPath + folderName + "/"
+            comp.absolutelyPath += folderPath
             comp.printAll()
+        }
     }
 
-    override fun printSum() {
-        Log.d("Folder", "Sum : " + sum().toString())
+    override fun printFileNum() {
+        Log.d("Folder", "파일개수 : " + countFile().toString())
     }
 
     override fun addComponent(folderComponent: FolderComponent) {
         list.add(folderComponent)
     }
 
-    override fun sum(): Int {
-        var tempData : Int = data
-        for (comp: FolderComponent in list){
-            tempData += comp.sum()
+    override fun countFile(): Int {
+        var filesCount = 0
+        for (comp: FolderComponent in list) {
+            filesCount += comp.countFile()
         }
-        return tempData
+        return filesCount
     }
 
 }

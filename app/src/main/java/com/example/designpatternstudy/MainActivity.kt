@@ -66,20 +66,20 @@ class MainActivity : AppCompatActivity() {
 //         mp4Player.displayVideo()
 
 //        Composite
-        var subFolder : FolderComponent = Folder()
-        subFolder.addComponent(File())
-        subFolder.addComponent(File())
-        subFolder.addComponent(File())
-        subFolder.addComponent(File())
+        var subFolder : FolderComponent = Folder("folder2")
+        subFolder.addComponent(File("file4"))
+        subFolder.addComponent(File("file5"))
+        subFolder.addComponent(File("file6"))
+        subFolder.addComponent(File("file7"))
 
-        var superFolder: FolderComponent = Folder()
+        var superFolder: FolderComponent = Folder("folder1")
+
+        superFolder.addComponent(File("file1"))
+        superFolder.addComponent(File("file2"))
+        superFolder.addComponent(File("file3"))
         superFolder.addComponent(subFolder)
-        superFolder.addComponent(File())
-        superFolder.addComponent(File())
-        superFolder.addComponent(File())
-
-        superFolder.printSum()
-        superFolder.printSum()
+        
+        superFolder.printFileNum()
 
         superFolder.printAll()
     }

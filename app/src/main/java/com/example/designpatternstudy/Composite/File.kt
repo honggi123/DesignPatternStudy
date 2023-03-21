@@ -2,14 +2,15 @@ package com.example.designpatternstudy.Composite
 
 import android.util.Log
 
-class File : FolderComponent() {
-
-    private var data: Int = 5
+class File(val fileName: String) : FolderComponent(fileName) {
 
     override fun printAll() {
-        Log.d("File", data.toString())
+        super.absolutelyPath += fileName
+        Log.d("filePath", absolutelyPath)
     }
 
-    override fun sum(): Int = data
+    override fun countFile(): Int {
+        return 1
+    }
 
 }
