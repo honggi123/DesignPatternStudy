@@ -2,8 +2,6 @@ package com.example.designpatternstudy.TemplateMethod
 
 class Chicken : FoodMaker() {
 
-    override fun IsChicken(): Boolean = true
-
     override fun prepareCondiments() {
         System.out.println("닭을 준비합니다.")
     }
@@ -19,7 +17,6 @@ class Chicken : FoodMaker() {
     override fun putSideCooking() {
         System.out.println("무를 넣습니다.")
     }
-
 
 
 }

@@ -22,9 +22,9 @@ abstract class FoodMaker {
             }
         }
 
-        if(IsChicken()){
-            putSideCooking()
-        }
+
+        putSideCooking()
+
 
     }
 
@@ -35,7 +35,7 @@ abstract class FoodMaker {
     protected abstract fun prepareCondiments()
     protected abstract fun cook()
     protected abstract fun cutCondiments()
-    protected abstract fun putSideCooking()
+    protected open fun putSideCooking() {}
 
     private fun boxingLowDistance() {
         System.out.println("일반 박스에 넣습니다.")
@@ -45,7 +45,5 @@ abstract class FoodMaker {
         System.out.println("온열 박스로 포장합니다.")
     }
 
-
-    protected open fun IsChicken() = false
 
 }
