@@ -8,21 +8,21 @@ class Warrior(private var HP: Int) {
 
     var autoDrink : Boolean = false
 
-    lateinit var state: WarriorState
+    lateinit private var state: WarriorState
 
     init {
-        computeState()
+        selectState()
     }
 
-    fun attacked(damageScore: Int) {
+    fun takeDamage(damageScore: Int) {
         HP = state.computeHP(HP, damageScore)
-        computeState()
+        selectState()
         state.printWarning()
     }
 
-    private fun computeState(){
+    private fun selectState(){
         if (HP <= 0) state = deadState
-        else if (HP <= 50) state = lowHpState
+        else if (HP <= 30) state = lowHpState
         else state = safeHpState
     }
 

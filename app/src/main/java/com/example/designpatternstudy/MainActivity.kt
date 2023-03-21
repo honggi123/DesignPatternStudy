@@ -7,6 +7,7 @@ import com.example.designpatternstudy.Adapter.FormatAdapter
 import com.example.designpatternstudy.Adapter.Mp3Player
 import com.example.designpatternstudy.Command.*
 import com.example.designpatternstudy.Decorator.*
+import com.example.designpatternstudy.State.Warrior
 
 
 class MainActivity : AppCompatActivity() {
@@ -62,5 +63,7 @@ class MainActivity : AppCompatActivity() {
 //         mp4Player.playSong()
 //         mp4Player.displayVideo()
 
+        var warrior = Warrior(50)
+        warrior.takeDamage(10)
     }
 }
