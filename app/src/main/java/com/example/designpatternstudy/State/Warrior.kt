@@ -1,40 +1,29 @@
 package com.example.designpatternstudy.State
 
-class Warrior(private var hp: Int) {
+class Warrior(private var HP: Int) {
 
-    private val deadState: DeadState = DeadState(this)
-    private val lowHpState: LowHpState = LowHpState(this)
-    private val safeHpState: SafeHpState = SafeHpState(this)
+    val deadState: DeadState = DeadState(this)
+    val lowHpState: LowHpState = LowHpState(this)
+    val safeHpState: SafeHpState = SafeHpState(this)
 
-    val _hp: Int
-        get() {
-            return hp
-        }
+    var autoDrink : Boolean = false
 
     lateinit var state: WarriorState
 
     init {
-        changeState(hp)
+        computeState()
     }
 
-    fun attacked(damage: Int) {
-        changeDamagedHp(damage)
-        changeState(hp)
+    fun attacked(damageScore: Int) {
+        HP = state.computeHP(HP, damageScore)
+        computeState()
         state.printWarning()
     }
 
-    private fun changeDamagedHp(damage: Int) {
-        hp -= state.getDamageSize(damage)
-    }
-
-    private fun changeState(hp: Int) {
-        if (hp <= 30) {
-            state = lowHpState
-        } else if (0 <= hp) {
-            state = deadState
-        } else {
-            state = safeHpState
-        }
+    private fun computeState(){
+        if (HP <= 0) state = deadState
+        else if (HP <= 50) state = lowHpState
+        else state = safeHpState
     }
 
 
