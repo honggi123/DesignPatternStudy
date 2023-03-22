@@ -1,3 +1,3 @@
 package com.example.designpatternstudy.Iterator
 
-data class Car(override var name: String, var cost: Int) : Product(name)
+data class Car(override var name: String) : Product("[Car]$name")

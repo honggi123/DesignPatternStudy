@@ -1,6 +1,6 @@
 package com.example.designpatternstudy.Iterator
 
-class BookShelf : Home {
+class BookShelf : Aggregate {
 
     private var list = mutableListOf<Book>()
 
@@ -8,7 +8,7 @@ class BookShelf : Home {
         list.add(book)
     }
 
-    override fun createIterator(): Iterator<Book> {
+    override fun Iterator(): Iterator<Book> {
         return BookIterator(list)
     }
 }

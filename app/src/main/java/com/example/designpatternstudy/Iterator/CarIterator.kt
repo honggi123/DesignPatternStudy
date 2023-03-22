@@ -1,17 +1,13 @@
 package com.example.designpatternstudy.Iterator
 
-class CarIterator(private val list: MutableList<Car>) : Iterator<Car> {
+class CarIterator(private val set: HashSet<Car>) : Iterator<Car> {
 
     private var position: Int = 0
 
-    override fun hasNext(): Boolean {
-        if (position >= list.size || list[position] == null) return false;
-        else return true;
-    }
+    override fun hasNext(): Boolean = position < set.size
 
     override fun next(): Car {
-        var car = list.get(position)
-        position++
-        return car
+        return set.elementAt(position++)
     }
+
 }

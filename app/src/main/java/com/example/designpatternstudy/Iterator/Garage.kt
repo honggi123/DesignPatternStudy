@@ -1,15 +1,15 @@
 package com.example.designpatternstudy.Iterator
 
-class Garage : Home {
+class Garage : Aggregate {
 
-    private var list = mutableListOf<Car>()
+    private var set = HashSet<Car>()
 
     fun addCar(car: Car) {
-        list.add(car)
+        set.add(car)
     }
 
-    override fun createIterator(): Iterator<Car> {
-        return CarIterator(list)
+    override fun Iterator(): Iterator<Car> {
+        return CarIterator(set)
     }
 
 }

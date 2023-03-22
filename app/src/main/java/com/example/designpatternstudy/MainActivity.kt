@@ -62,16 +62,16 @@ class MainActivity : AppCompatActivity() {
 //        Iterator
 //        예시 데이터
         var bookShelf = BookShelf()
-        bookShelf.addBook(Book("책1", 123))
-        bookShelf.addBook(Book("책2", 123))
-        bookShelf.addBook(Book("책3", 123))
+        bookShelf.addBook(Book("책1"))
+        bookShelf.addBook(Book("책2"))
+        bookShelf.addBook(Book("책3"))
 
         var garage = Garage()
-        garage.addCar(Car("차1", 123))
-        garage.addCar(Car("차2", 123))
+        garage.addCar(Car("차1"))
+        garage.addCar(Car("차2"))
 
-        var myFriend = Friend(bookShelf,garage)
-        myFriend.printProduct()
+        var home = Home(bookShelf,garage)
+        home.printProduct()
 
     }
 }
