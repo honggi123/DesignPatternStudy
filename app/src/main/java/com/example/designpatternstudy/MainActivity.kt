@@ -2,11 +2,9 @@ package com.example.designpatternstudy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.designpatternstudy.Adapter.FormatAdapter
-import com.example.designpatternstudy.Adapter.Mp3Player
-import com.example.designpatternstudy.Command.*
-import com.example.designpatternstudy.Decorator.*
+import com.example.designpatternstudy.TemplateMethod.Chicken
+import com.example.designpatternstudy.TemplateMethod.DelieverDistance
+import com.example.designpatternstudy.TemplateMethod.FoodMaker
 
 
 class MainActivity : AppCompatActivity() {
@@ -61,6 +59,9 @@ class MainActivity : AppCompatActivity() {
 //         var mp4Player = FormatAdapter(mp3Player)
 //         mp4Player.playSong()
 //         mp4Player.displayVideo()
+
+          var chicken = Chicken()
+          chicken.prepareFood(DelieverDistance.Long)
 
     }
 }
