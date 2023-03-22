@@ -1,6 +1,6 @@
 package com.example.designpatternstudy.Adapter
 
-class FormatAdapter(val mp3Player: Mp3Player) : Mp4 {
+class Mp4FormatAdapter(val mp3Player: Mp3Player) : Mp4 {
 
     override fun playSong() {
         mp3Player.playSong()
