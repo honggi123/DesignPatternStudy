@@ -2,12 +2,13 @@ package com.example.designpatternstudy.Composite
 
 import kotlin.UnsupportedOperationException
 
-abstract class FolderComponent(name: String) {
+abstract class FolderComponent() {
 
-    open var ComponentName : String = name
-    open var absolutelyPath : String = ""
+    abstract fun printAllPath(path: String)
 
-    abstract fun printAll()
+    open fun printFilesPath() {
+        throw UnsupportedOperationException()
+    }
 
     open fun printFileNum() {
         throw UnsupportedOperationException()

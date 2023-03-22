@@ -2,11 +2,10 @@ package com.example.designpatternstudy.Composite
 
 import android.util.Log
 
-class File(val fileName: String) : FolderComponent(fileName) {
+class File(val fileName: String) : FolderComponent() {
 
-    override fun printAll() {
-        super.absolutelyPath += fileName
-        Log.d("filePath", absolutelyPath)
+    override fun printAllPath(path: String) {
+        Log.d("filePath", path + "/" + fileName)
     }
 
     override fun countFile(): Int {
