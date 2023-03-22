@@ -2,14 +2,20 @@ package com.example.designpatternstudy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import android.util.Log
-import com.example.designpatternstudy.Adapter.FormatAdapter
+import com.example.designpatternstudy.Adapter.Mp4FormatAdapter
 import com.example.designpatternstudy.Adapter.Mp3Player
 import com.example.designpatternstudy.Command.*
 import com.example.designpatternstudy.Composite.File
 import com.example.designpatternstudy.Composite.Folder
 import com.example.designpatternstudy.Composite.FolderComponent
 import com.example.designpatternstudy.Decorator.*
+
+import com.example.designpatternstudy.TemplateMethod.Chicken
+import com.example.designpatternstudy.TemplateMethod.DelieverDistance
+import com.example.designpatternstudy.TemplateMethod.FoodMaker
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -65,6 +71,7 @@ class MainActivity : AppCompatActivity() {
 //         mp4Player.playSong()
 //         mp4Player.displayVideo()
 
+
 //        Composite
         var subFolder: FolderComponent = Folder("folder2")
         subFolder.addComponent(File("file4"))
@@ -82,6 +89,10 @@ class MainActivity : AppCompatActivity() {
         superFolder.printFileNum()
 
         superFolder.printFilesPath()
+
+        var chicken = Chicken()
+        chicken.prepareFood(DelieverDistance.Long)
+
 
     }
 }
