@@ -2,21 +2,10 @@ package com.example.designpatternstudy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.designpatternstudy.Iterator.*
 
-import android.util.Log
-import com.example.designpatternstudy.Adapter.Mp4FormatAdapter
-import com.example.designpatternstudy.Adapter.Mp3Player
-import com.example.designpatternstudy.Command.*
-import com.example.designpatternstudy.Composite.File
-import com.example.designpatternstudy.Composite.Folder
-import com.example.designpatternstudy.Composite.FolderComponent
-import com.example.designpatternstudy.Decorator.*
-
-import com.example.designpatternstudy.TemplateMethod.Chicken
-import com.example.designpatternstudy.TemplateMethod.DelieverDistance
-import com.example.designpatternstudy.TemplateMethod.FoodMaker
-
+import com.example.designpatternstudy.Proxy.Cache.ImageProxy
+import com.example.designpatternstudy.Proxy.Protecting.Ex_User
+import com.example.designpatternstudy.Proxy.Protecting.ProxyRiderCommand
 
 
 class MainActivity : AppCompatActivity() {
@@ -75,40 +64,51 @@ class MainActivity : AppCompatActivity() {
 
 //        Iterator
 //        예시 데이터
-        var bookShelf = BookShelf()
-        bookShelf.addBook(Book("책1"))
-        bookShelf.addBook(Book("책2"))
-        bookShelf.addBook(Book("책3"))
-
-        var garage = Garage()
-        garage.addCar(Car("차1"))
-        garage.addCar(Car("차2"))
-
-        var home = Home(bookShelf,garage)
-        home.printProduct()
+//        var bookShelf = BookShelf()
+//        bookShelf.addBook(Book("책1"))
+//        bookShelf.addBook(Book("책2"))
+//        bookShelf.addBook(Book("책3"))
+//
+//        var garage = Garage()
+//        garage.addCar(Car("차1"))
+//        garage.addCar(Car("차2"))
+//
+//        var home = Home(bookShelf,garage)
+//        home.printProduct()
 
 
 //        Composite
-        var subFolder: FolderComponent = Folder("folder2")
-        subFolder.addComponent(File("file4"))
-        subFolder.addComponent(File("file5"))
-        subFolder.addComponent(File("file6"))
-        subFolder.addComponent(File("file7"))
+//        var subFolder: FolderComponent = Folder("folder2")
+//        subFolder.addComponent(File("file4"))
+//        subFolder.addComponent(File("file5"))
+//        subFolder.addComponent(File("file6"))
+//        subFolder.addComponent(File("file7"))
+//
+//        var superFolder: FolderComponent = Folder("folder1")
+//
+//        superFolder.addComponent(File("file1"))
+//        superFolder.addComponent(File("file2"))
+//        superFolder.addComponent(File("file3"))
+//        superFolder.addComponent(subFolder)
+//
+//        superFolder.printFileNum()
+//
+//        superFolder.printFilesPath()
+//
+//        var chicken = Chicken()
+//        chicken.prepareFood(DelieverDistance.Long)
 
-        var superFolder: FolderComponent = Folder("folder1")
+//        Proxy
+//        var imageProxy = ImageProxy()
+//        imageProxy.displayImage()
+//        imageProxy.displayImage()
 
-        superFolder.addComponent(File("file1"))
-        superFolder.addComponent(File("file2"))
-        superFolder.addComponent(File("file3"))
-        superFolder.addComponent(subFolder)
+        var proxyRiderCommand = ProxyRiderCommand()
+        proxyRiderCommand.delivery(Ex_User("honggi1",false,true))
+        proxyRiderCommand.delivery(Ex_User("honggi2",false,false))
 
-        superFolder.printFileNum()
-
-        superFolder.printFilesPath()
-
-        var chicken = Chicken()
-        chicken.prepareFood(DelieverDistance.Long)
-
+        proxyRiderCommand.getLatestDeliveredUser(Ex_User("honggi3",false))
+        proxyRiderCommand.getLatestDeliveredUser(Ex_User("honggi4",true))
 
     }
 }

@@ -1,6 +1,6 @@
 package com.example.designpatternstudy.Proxy.Protecting
 
 interface RiderCommand {
-    fun delivery(user: User)
-    fun latestDeliveredUser(user: User)
+    fun delivery(EXUser: Ex_User)
+    fun getLatestDeliveredUser(EXUser: Ex_User)
 }
