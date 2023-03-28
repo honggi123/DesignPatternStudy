@@ -3,8 +3,7 @@ package com.example.designpatternstudy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-import com.example.designpatternstudy.Proxy.Cache.ImageProxy
-import com.example.designpatternstudy.Proxy.Protecting.Ex_User
+import com.example.designpatternstudy.Proxy.Protecting.ExUser
 import com.example.designpatternstudy.Proxy.Protecting.ProxyRiderCommand
 
 
@@ -104,11 +103,11 @@ class MainActivity : AppCompatActivity() {
 //        imageProxy.displayImage()
 
         var proxyRiderCommand = ProxyRiderCommand()
-        proxyRiderCommand.delivery(Ex_User("honggi1",false,true))
-        proxyRiderCommand.delivery(Ex_User("honggi2",false,false))
+        proxyRiderCommand.delivery(ExUser("honggi1",false,true))
+        proxyRiderCommand.delivery(ExUser("honggi2",false,false))
 
-        proxyRiderCommand.getLatestDeliveredUser(Ex_User("honggi3",false))
-        proxyRiderCommand.getLatestDeliveredUser(Ex_User("honggi4",true))
+        proxyRiderCommand.getLatestDeliveredUser(ExUser("honggi3",false))
+        proxyRiderCommand.getLatestDeliveredUser(ExUser("honggi4",true))
 
     }
 }
