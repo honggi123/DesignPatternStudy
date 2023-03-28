@@ -12,6 +12,7 @@ import com.example.designpatternstudy.Composite.File
 import com.example.designpatternstudy.Composite.Folder
 import com.example.designpatternstudy.Composite.FolderComponent
 import com.example.designpatternstudy.Decorator.*
+import com.example.designpatternstudy.State.Warrior
 
 import com.example.designpatternstudy.TemplateMethod.Chicken
 import com.example.designpatternstudy.TemplateMethod.DelieverDistance
@@ -109,6 +110,12 @@ class MainActivity : AppCompatActivity() {
         var chicken = Chicken()
         chicken.prepareFood(DelieverDistance.Long)
 
+
+        var warrior = Warrior(50)
+        warrior.takeDamage(30)
+        warrior.takeDamage(20)
+
+        warrior.takeDamage(20)
 
     }
 }
