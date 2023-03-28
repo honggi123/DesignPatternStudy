@@ -64,6 +64,10 @@ class MainActivity : AppCompatActivity() {
 //         mp4Player.displayVideo()
 
         var warrior = Warrior(50)
-        warrior.takeDamage(10)
+        warrior.takeDamage(30)
+        warrior.takeDamage(20)
+
+        warrior.takeDamage(20)
+
     }
 }

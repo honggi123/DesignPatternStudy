@@ -1,6 +1,6 @@
 package com.example.designpatternstudy.State
 
-class Warrior(private var HP: Int) {
+class Warrior(var HP: Int) {
 
     val deadState: DeadState = DeadState(this)
     val lowHpState: LowHpState = LowHpState(this)
@@ -8,15 +8,14 @@ class Warrior(private var HP: Int) {
 
     var autoDrink : Boolean = false
 
-    lateinit private var state: WarriorState
+    lateinit var state: WarriorState
 
     init {
         selectState()
     }
 
     fun takeDamage(damageScore: Int) {
-        HP = state.computeHP(HP, damageScore)
-        selectState()
+        state.takeDamage(HP, damageScore)
         state.printWarning()
     }
 
