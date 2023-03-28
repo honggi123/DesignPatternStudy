@@ -3,6 +3,22 @@ package com.example.designpatternstudy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
+import com.example.designpatternstudy.Iterator.*
+
+import android.util.Log
+import com.example.designpatternstudy.Adapter.Mp4FormatAdapter
+import com.example.designpatternstudy.Adapter.Mp3Player
+import com.example.designpatternstudy.Command.*
+import com.example.designpatternstudy.Composite.File
+import com.example.designpatternstudy.Composite.Folder
+import com.example.designpatternstudy.Composite.FolderComponent
+import com.example.designpatternstudy.Decorator.*
+import com.example.designpatternstudy.State.Warrior
+
+import com.example.designpatternstudy.TemplateMethod.Chicken
+import com.example.designpatternstudy.TemplateMethod.DelieverDistance
+import com.example.designpatternstudy.TemplateMethod.FoodMaker
+
 import com.example.designpatternstudy.Proxy.Protecting.ExUser
 import com.example.designpatternstudy.Proxy.Protecting.ProxyRiderCommand
 
@@ -108,6 +124,12 @@ class MainActivity : AppCompatActivity() {
 
         proxyRiderCommand.getLatestDeliveredUser(ExUser("honggi3",false))
         proxyRiderCommand.getLatestDeliveredUser(ExUser("honggi4",true))
+
+        var warrior = Warrior(50)
+        warrior.takeDamage(30)
+        warrior.takeDamage(20)
+
+        warrior.takeDamage(20)
 
     }
 }
