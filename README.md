@@ -1,6 +1,20 @@
 # DesignPatternStudy
 
-디자인 패턴 적용 예제 
+This is a project for learning design patterns.
 
-### Reference
+## Types of Design Patterns Learned
+
+* TemplateMethod
+* Composite
+* Iterator
+* Proxy
+* State
+* Command
+* Decorator
+* Observer
+* Factory
+* Adapter
+* MVP
+
+## Reference
 * Head First Desigin Pattern
