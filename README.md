@@ -17,4 +17,4 @@ This is a project for learning design patterns.
 * MVP
 
 ## Reference
-* Head First Desigin Pattern
+* Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software
