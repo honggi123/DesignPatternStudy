@@ -1,12 +1,12 @@
-# DesignPatternStudy
+# DesignPatterns
 
-This is a project for learning design patterns.
+This project contains multiple design patterns
 
 ## Types of Design Patterns Learned
 
-* TemplateMethod
+* TemplateMethod 
 * Composite
-* Iterator
+* Iterator 
 * Proxy
 * State
 * Command
